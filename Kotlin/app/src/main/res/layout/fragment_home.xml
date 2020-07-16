@@ -1,0 +1,48 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_launcher_foreground"
+        tools:context=".screens.title.TitleFragment">
+
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:padding="@dimen/padding8dp"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/fontSize18sp"
+            android:textStyle="bold"
+            android:text="@string/home_descp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/btnBegin"
+            android:layout_width="@dimen/width100dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/btnStart"
+            android:textSize="@dimen/fontSize16sp"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard"
+            app:layout_constraintVertical_bias="0.303"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

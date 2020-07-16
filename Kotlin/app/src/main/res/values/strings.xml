@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VideosDetails</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="about_screen">About</string>
+    <string name="about_descp">This Application will provide information about Latest Videos on Android Development using MVVM Architecture</string>
+    <string name="title_about">Welcome to Android World</string>
+    <string name="home_descp">Welcome to Android Videos Section</string>
+    <string name="btnStart">Lets Begin</string>
+</resources>

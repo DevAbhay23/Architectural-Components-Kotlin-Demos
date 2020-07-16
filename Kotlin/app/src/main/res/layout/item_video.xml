@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="video"
+            type="com.learn.kotlin.domain.VideoStoryModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin8dp"
+        android:layout_marginBottom="@dimen/margin16dp"
+        android:layout_marginStart="@dimen/margin8dp"
+        android:layout_marginEnd="@dimen/margin8dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="@dimen/radius5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding5dp"
+            >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/padding8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin8dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/padding8dp" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding5dp"
+                android:layout_margin="@dimen/margin2dp"
+                android:textSize="@dimen/fontSize20sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="@+id/right_well"
+                app:layout_constraintStart_toStartOf="@+id/left_well"
+                app:layout_constraintTop_toTopOf="parent"
+                app:text="@{video.title}" />
+
+            <ImageView
+                android:id="@+id/imgVideos"
+                android:layout_width="@dimen/width100dp"
+                android:layout_height="@dimen/height100dp"
+                android:scaleType="fitXY"
+                app:imageUrl="@{video.thumbnail}"
+                android:background="@drawable/rec_background"
+                app:layout_constraintStart_toStartOf="@+id/left_well"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+            <TextView
+                android:id="@+id/txtCreatedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding5dp"
+                android:textSize="@dimen/fontSize18sp"
+                android:textStyle="normal"
+                android:textAlignment="gravity"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="@+id/right_well"
+               app:layout_constraintBottom_toBottomOf="parent"
+                app:text="@{video.formattedDate}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

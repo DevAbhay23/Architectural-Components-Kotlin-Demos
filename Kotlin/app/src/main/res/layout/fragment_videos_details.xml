@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="videoDetailsViewModel"
+            type="com.learn.kotlin.videos_details.VideosDetailsViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding5dp">
+
+        <ImageView
+            android:id="@+id/imgVideos"
+            android:layout_width="@dimen/width200dp"
+            android:layout_height="@dimen/height200dp"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:background="@drawable/rec_background"
+            android:scaleType="fitXY"
+            app:imageUrl="@{videoDetailsViewModel.selectedProperty.thumbnail}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:padding="@dimen/padding5dp"
+            android:textSize="@dimen/fontSize20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgVideos"
+            app:text="@{videoDetailsViewModel.selectedProperty.title}" />
+
+        <ScrollView
+            android:id="@+id/slDescp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCreatedAt">
+
+            <TextView
+                android:id="@+id/txtDescp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20dp"
+                android:gravity="start"
+                android:padding="@dimen/padding5dp"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/fontSize18sp"
+                android:textStyle="normal"
+                    app:text="@{videoDetailsViewModel.selectedProperty.description}" />
+        </ScrollView>
+
+
+        <TextView
+            android:id="@+id/txtCreatedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:gravity="end"
+            android:padding="@dimen/padding5dp"
+            android:textAlignment="gravity"
+            android:textSize="@dimen/fontSize18sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            app:text="@{videoDetailsViewModel.selectedProperty.formattedDate}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
