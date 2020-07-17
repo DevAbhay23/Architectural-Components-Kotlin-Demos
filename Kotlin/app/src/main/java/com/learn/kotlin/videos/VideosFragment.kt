@@ -17,7 +17,6 @@ import com.learn.kotlin.R
 import com.learn.kotlin.databinding.FragmentVideosBinding
 import com.learn.kotlin.domain.VideoStoryModel
 
-enum class VideoApiStatus { LOADING, ERROR, DONE }
 class VideosFragment : Fragment() {
 
     /**

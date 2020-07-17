@@ -14,8 +14,6 @@ import java.io.IOException
 
 class VideosViewModel(application: Application) : AndroidViewModel(application) {
 
-    var status = VideoApiStatus.LOADING
-
     /**
      * The data source this ViewModel will fetch results from.
      */
@@ -95,16 +93,13 @@ class VideosViewModel(application: Application) : AndroidViewModel(application) 
     private fun refreshDataFromRepository() {
         viewModelScope.launch {
             try {
-                status = VideoApiStatus.LOADING
                 videoRepository.refreshVideos()
-                status = VideoApiStatus.DONE
                 _eventNetworkError.value = false
                 _isNetworkErrorShown.value = false
 
             } catch (networkError: IOException) {
                 if (videoList.value.isNullOrEmpty()) {
                     _eventNetworkError.value = true
-                    status = VideoApiStatus.ERROR
                 }
 
             }
