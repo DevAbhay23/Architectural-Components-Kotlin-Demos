@@ -20,10 +20,6 @@ import kotlinx.android.parcel.Parcelize
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
-/**
- * Domain objects are plain Kotlin data classes that represent the things in our app. These are the
- * objects that should be displayed on screen, or manipulated by the app.
- */
 
 /**
  * Videos represent a story model that can be read.

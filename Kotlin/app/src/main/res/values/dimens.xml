@@ -24,4 +24,6 @@
     <dimen name="width100dp">100dp</dimen>
     <dimen name="height100dp">100dp</dimen>
     <dimen name="margin2dp">2dp</dimen>
+    <dimen name="width300dp">300dp</dimen>
+    <dimen name="height300dp">300dp</dimen>
 </resources>

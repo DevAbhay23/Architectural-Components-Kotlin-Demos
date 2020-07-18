@@ -1,7 +1,6 @@
 package com.learn.kotlin.videos
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,14 +20,14 @@ class VideosFragment : Fragment() {
 
     /**
      * One way to delay creation of the viewModel until an appropriate lifecycle method is to use
-     * lazy. This requires that viewModel not be referenced before onActivityCreated, which we
-     * do in this Fragment.
+     * lazy. This requires that viewModel not be referenced before onActivityCreated,
      */
     private val viewModel: VideosViewModel by lazy {
         val activity = requireNotNull(this.activity) {
-            "You can only access the viewModel after onActivityCreated()"
+            "We can only access the viewModel after onActivityCreated()"
         }
-        ViewModelProviders.of(this,
+        ViewModelProviders.of(
+            this,
             VideosViewModel.Factory(activity.application)
         )
             .get(VideosViewModel::class.java)
@@ -65,8 +64,6 @@ class VideosFragment : Fragment() {
                 R.layout.fragment_videos, container, false
             )
 
-
-        Log.i("ReportFragment", "Called ViewModelProviders.of")
         setHasOptionsMenu(true)
 
         binding.lifecycleOwner = viewLifecycleOwner
@@ -76,9 +73,10 @@ class VideosFragment : Fragment() {
         })
 
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
-            if ( null != it ) {
+            if (null != it) {
                 this.findNavController().navigate(
-                    VideosFragmentDirections.actionVideoToDetails(it))
+                    VideosFragmentDirections.actionVideoToDetails(it)
+                )
                 viewModel.displayPropertyDetailsComplete()
             }
         })

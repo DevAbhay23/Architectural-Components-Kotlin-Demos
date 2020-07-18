@@ -4,18 +4,12 @@ import com.learn.kotlin.database.DatabaseVideos
 import com.squareup.moshi.JsonClass
 
 /**
- * DataTransferObjects go in this file. These are responsible for parsing responses from the server
- * or formatting objects to send to the server. We should convert these to domain objects before
- * using them.
- */
-
-/**
  * VideoHolder holds a list of videos hits.
  *
  * This is to parse first level of our network result which looks like
  *
  * {
- *   "hits": []
+ *   "videos": []
  * }
  */
 @JsonClass(generateAdapter = true)

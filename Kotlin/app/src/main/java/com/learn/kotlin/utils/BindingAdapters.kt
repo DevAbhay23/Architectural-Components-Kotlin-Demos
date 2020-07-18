@@ -31,8 +31,8 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
  * Binding adapter used to hide the progress spinner once data is available.
  */
 @BindingAdapter("isNetworkError", "datalist")
-fun hideIfNetworkError(view: View, isNetWorkError: Boolean, datalist: Any?) {
-    view.visibility = if (datalist != null) View.GONE else View.VISIBLE
+fun hideIfNetworkError(view: View, isNetWorkError: Boolean, dataList: Any?) {
+    view.visibility = if (dataList != null) View.GONE else View.VISIBLE
 
     if(isNetWorkError) {
         view.visibility = View.GONE
